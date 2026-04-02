@@ -1232,26 +1232,35 @@ background: linear-gradient(
 /* Botones glass */
 .rsvp-buttons button {
   flex: 1;
+
+  /* 👇 SOLO tamaño/layout */
   padding: 10px 8px;
   font-size: .75rem;
   letter-spacing: .5px;
-  border-radius: 30px;
-  border: 1px solid rgba(255,255,255,.25);
 
-  background: rgba(255,255,255,.12);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  /* 👇 FORZAR estilo igual a .btn */
+  border-radius: 12px;
+  border: 2px solid #c49a6c;
 
-  color: #fff;
-  font-weight: 500;
+  background: linear-gradient(
+    135deg,
+    #3e2a1f,
+    #2b1d14
+  );
+
+  color: #f5e6cc;
+  font-weight: 600;
+  text-transform: uppercase;
 
   box-shadow:
-    inset 0 1px 1px rgba(255,255,255,.25),
-    0 8px 20px rgba(0,0,0,.35);
+    0 4px 12px rgba(0,0,0,.5),
+    inset 0 1px 0 rgba(255,255,255,.1);
 
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all .25s ease;
 }
+
+
 
  /* CONTENEDORES DE BOTONES EN COLUMNA */
 .btn-group {
@@ -1270,10 +1279,19 @@ background: linear-gradient(
   flex-wrap: wrap;
 }
   
-/* Hover estilo Apple */
 .rsvp-buttons button:hover {
-  transform: translateY(-2px) scale(1.04);
-  background: rgba(255,255,255,.18);
+  transform: translateY(-2px);
+
+  background: linear-gradient(
+    135deg,
+    #4a3326,
+    #2b1d14
+  );
+
+  border-color: #e6c89c;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.6);
 }
 
 /* Botón NO ASISTE más suave */
@@ -2028,7 +2046,7 @@ video{
 
     <div class="rsvp-buttons">
       <button class="btn" onclick="sendConfirmation(true)">
-        Confirmar asistencia ✨
+        Confirmar asistencia
       </button>
 
       <button class="btn btn-soft" onclick="sendConfirmation(false)">
